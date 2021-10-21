@@ -11,14 +11,13 @@ class Calculadora {
     
     Console.WriteLine("Bem vindo a calculadora, {0}", nome);
 
-
     do {
       Console.Write("Digite o tipo da operação que deseja realizar: ");
       tipo = Console.ReadLine();
       tipo = tipo.ToLower();
 
       if (tipo != "soma" & tipo != "multiplicação" & tipo != "divisão" & tipo != "subtração") {
-      Console.WriteLine("Tipo de operação invalida");
+        Console.WriteLine("Tipo de operação invalida");
       } else {
         int v1, v2, res;
 
@@ -31,25 +30,21 @@ class Calculadora {
         switch (tipo) {
           case "soma" :
             res = Soma(v1, v2);
-
             Console.WriteLine("O resultado é igual a: {0}", res);
             break;
 
           case "multiplicação" :
             res = Multiplicação(v1, v2);
-
             Console.WriteLine("O resultado é igual a: {0}", res);
             break;
 
           case "divisão" :
             res = Divisão(v1, v2);
-
             Console.WriteLine("O resultado é igual a: {0}", res);
             break;
 
           case "subtração" :
             res = Subtração(v1, v2);
-
             Console.WriteLine("O resultado é igual a: {0}", res);
             break;
         }
