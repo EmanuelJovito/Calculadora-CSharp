@@ -1,14 +1,22 @@
 using System;
 class Calculadora {
   static void Main() {
-    int finalizar;
-    string nome, tipo;
+    char finalizar;
+    string nome = "", tipo;
 
-    finalizar = 1;
+    finalizar = 's';
 
-    Console.Write("Digite o seu nome de usuário: ");
-    nome = Console.ReadLine();
-    
+    while (nome == "") {
+      Console.Write("Digite o seu nome de usuário: ");
+      nome = Console.ReadLine();
+      nome =  nome.Trim();
+
+      if (string.IsNullOrWhiteSpace(nome)) {
+        Console.Clear();
+        Console.WriteLine("Digite um nome de usuário valido.");
+      }
+    }
+
     Console.WriteLine("Bem vindo a calculadora, {0}", nome);
 
     do {
@@ -49,12 +57,12 @@ class Calculadora {
             break;
         }
         
-        Console.Write("DIGITE 0 SE DESEJA ENCERRAR E 1 SE DESEJA CONTINUAR: ");
-        finalizar = Convert.ToInt32(Console.ReadLine());
+        Console.Write("DESEJA CALCULAR MAIS ALGUMA COISA? DIGITE[S/N]: ");
+        finalizar = Char.ToLower(Convert.ToChar(Console.ReadLine()));
       }
 
       Console.Clear();
-    } while(finalizar == 1);
+    } while(finalizar == 's'); 
   }
 
   static int Soma(int v1, int v2) {
